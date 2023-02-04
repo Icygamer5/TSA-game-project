@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1817236227}
-  m_IndirectSpecularColor: {r: 0.18384448, g: 0.22859347, b: 0.30081007, a: 1}
+  m_IndirectSpecularColor: {r: 0.18384412, g: 0.22859293, b: 0.3008084, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerAngle: 30
+  spawnPoints: []
   motorForce: 1000
   breakForce: 3000
   maxSteerAngle: 10
@@ -223,6 +224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1724545635, guid: 9edc6aca43b5f8b4b9c2224f32157ca7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2705464156
+      objectReference: {fileID: 0}
     - target: {fileID: 1685742963572343246, guid: 9edc6aca43b5f8b4b9c2224f32157ca7, type: 3}
       propertyPath: m_Name
       value: Free Racing Car
@@ -392,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075738483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.558704, y: 2.0609493, z: -15.286025}
+  m_LocalPosition: {x: 13.558704, y: 58.3, z: -15.286025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
