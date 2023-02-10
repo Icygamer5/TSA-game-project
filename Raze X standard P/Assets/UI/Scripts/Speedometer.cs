@@ -20,12 +20,12 @@ public class Speedometer : MonoBehaviour
     private float speed = 0.0f;
     private void Update()
     {
-        // 3.6f to convert in kilometers
+        // 3.6f to convert in kilometers to 2.24 for miles
         // ** The speed must be clamped by the car controller **
-        speed = target.velocity.magnitude * 3.6f;
+        speed = target.velocity.magnitude * 2.23694f;
 
         if (speedLabel != null)
-            speedLabel.text = ((int)speed) + " km/h";
+            speedLabel.text = ((int)speed) + " mph";
         if (arrow != null)
             arrow.localEulerAngles =
                 new Vector3(0, 0, Mathf.Lerp(minSpeedArrowAngle, maxSpeedArrowAngle, speed / maxSpeed));

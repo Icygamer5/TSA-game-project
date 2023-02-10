@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using Unity.Services.Lobbies.Models;
+using Unity.VisualScripting;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -16,6 +18,7 @@ public class PlayerController : NetworkBehaviour
     private float currentSteerAngle;
     private bool isBreaking;
     public List<Transform> spawnPoints;
+    private Lobby lobby;
 
     [SerializeField] public float motorForce;
     [SerializeField] public float breakForce;
@@ -33,9 +36,15 @@ public class PlayerController : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-
-        transform.position = new Vector3(850, 0, 450);
-        transform.rotation = new Quaternion(0, -130, 0,0);
+        //transform.position = new Vector3(850, 0, 450);
+        //transform.rotation = new Quaternion(0, -130, 0,0);
+        int playercount = GameObject.Find("Lobby Room").GetComponent<LobbyRoomPanel>().GetPlayerCount(lobby);
+        for (int i = 0; i < playercount; i++)
+        {
+            transform.position = spawnPoints[i].transform.position;
+            transform.rotation= spawnPoints[i].transform.rotation;
+        }
+       
         if (!IsOwner) Destroy(this);
     }
 
